@@ -1,0 +1,195 @@
+#page_tab_bar {
+  position: fixed;
+  z-index: 999;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 96px;
+  background: #f5f5f5;
+  /* background-color: #f0f0f0; */
+  border-top: 1px solid #eee;
+  background-color: #fff;
+  overflow: hidden;
+}
+
+#centered_tab_bar {
+  position: absolute;
+  top: 0;
+  left: 36px;
+  right: 36px;
+  height: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#tab_bar__player_buttons,
+#tab_bar__player_buttons--2,
+#tab_bar__player_buttons--3 {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  height: 42px;
+  width: 240px;
+}
+
+#tab_bar__player_buttons {
+  left: 0;
+  width: 210px;
+}
+#tab_bar__player_buttons--2 {
+  width: 84px;
+  right: 390px;
+}
+#tab_bar__player_buttons--3 {
+  width: 84px;
+  right: 0;
+}
+
+.tab_bar__button {
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#tab_bar__button--shuffle {
+  left: 42px;
+}
+#tab_bar__button--skip_previous {
+  left: 84px;
+}
+#tab_bar__button--play {
+  left: 126px;
+}
+#tab_bar__button--skip_next {
+  left: 168px;
+}
+#tab_bar__button--volume {
+  right: 42px;
+}
+#tab_bar__button--cast {
+  right: 0;
+}
+#tab_bar__button--heart {
+  right: 42px;
+}
+#tab_bar__button--playlist {
+  right: 0;
+}
+
+.tab_bar__button__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tab_bar__audio_time_text {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 42px;
+  height: 42px;
+  margin: auto 0;
+  line-height: 42px;
+  text-align: center;
+  vertical-align: middle;
+  cursor: default;
+  user-select: none;
+  font-size: 12px;
+}
+
+#tab_bar__text--current_play_time {
+  left: 228px;
+  color: #e05751;
+  text-align: right;
+}
+#tab_bar__text--audio_length {
+  right: 486px;
+}
+
+#tab_bar__track_bar_container {
+  position: absolute;
+  top: 24px;
+  bottom: 0;
+  left: 282px;
+  right: 534px;
+  height: 42px;
+  margin: auto 0;
+  cursor: pointer;
+}
+
+#tab_bar__track_bar_line_background {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  margin: auto 0;
+  border-radius: 4px;
+  background-color: #eaeaea;
+}
+
+#tab_bar__track_bar_line_progress {
+  position: absolute;
+  top: 0;
+  width: 40%;
+  height: 4px;
+  border-radius: 4px;
+  background-color: #e05751;
+}
+
+#tab_bar__track_details_container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 84px;
+  width: 300px;
+  height: 42px;
+  margin: auto 0;
+}
+
+#tab_bar__mini_album_art {
+  position: absolute;
+  top: 0;
+  left: 3px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  background-color: #ddd;
+  overflow: hidden;
+}
+
+#tab_bar__track_name {
+  position: absolute;
+  top: 0;
+  left: 54px;
+  right: 0;
+  height: 21px;
+  line-height: 21px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#tab_bar__artist_name {
+  position: absolute;
+  top: 21px;
+  left: 54px;
+  right: 0;
+  height: 21px;
+  line-height: 21px;
+  font-size: 12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

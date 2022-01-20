@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import 'components/nav';
+@import 'components/cards';
+@import 'components/sidebar';
+@import 'components/sections';
+@import 'components/tab_bar';
+
+/*
+
+*  base
+*  components
+
+*/
+
+@layer base {
+  html {
+    @apply bg-gray-50 overflow-x-hidden overflow-y-scroll;
+  }
+}
+
+/* ================================================== */
+
+@layer components {
+  .main_content_wrapper {
+    @apply block w-full mt-24 max-w-7xl mx-auto;
+  }
+
+  .page_max_width {
+    @apply max-w-7xl;
+  }
+
+  .base_text_color {
+    @apply text-black;
+  }
+
+  .bg_accent_color {
+    @apply bg-blue-500;
+  }
+
+  .text_accent_color {
+    @apply text-blue-500;
+  }
+
+  .page_bottom_padding {
+    @apply block w-full h-40;
+  }
+
+  .image_visibility {
+    @apply block;
+  }
+
+  .image_container_bg {
+    @apply bg-gray-100;
+  }
+
+  .app_bg_gradient {
+    @apply fixed w-full h-1/2 -top-24 bg-gradient-to-b from-gray-700 to-transparent opacity-5;
+  }
+
+  .blog_category_v {
+    @apply relative w-full pt-2 mb-0 flex flex-nowrap text-yellow-600 leading-snug text-sm;
+  }
+
+  .blog_category_h {
+    @apply relative w-full mb-1.5 flex flex-nowrap pt-0 text-yellow-600 leading-snug text-sm;
+  }
+
+  .headerTabButton {
+    @apply inline-block leading-9 mt-1 pb-0.5 text-black rounded px-1 cursor-pointer;
+  }
+
+  .headerTabButton:nth-child(1) {
+    @apply bg-gray-500;
+  }
+
+  .trendingTabButton {
+    @apply inline-block leading-9 mt-0 pb-0.5 rounded px-3 cursor-pointer;
+  }
+
+  .hero_card_gradient {
+    @apply absolute bottom-0 left-0 w-full h-3/4 bg-gradient-to-t from-black to-transparent;
+  }
+
+  .box_radius {
+    @apply rounded-md;
+  }
+}
+
+.bg_custom_color_1 {
+  background-color: #bf5f1f;
+  background-color: #e69100;
+  background-color: #323140;
+  background-color: #3d004d;
+  background-color: #217821;
+  background-color: #4d4740;
+}
+
+.navPageButton_selected .navPageButtonIcon {
+  fill: #bf5f1f;
+}
+
+.bg_dark_red {
+  background-color: #bf5f1f;
+  background-color: #ffa200;
+}
+
+.shadow-1 {
+  box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 12px -10px #000;
+  box-shadow: 0 2px 9px -7px #000;
+  box-shadow: 0 1px 13px -8px #000;
+}

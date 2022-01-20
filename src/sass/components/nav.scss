@@ -1,0 +1,20 @@
+/*
+
+*  Something
+*  Something
+
+*/
+
+@layer components {
+  .navPageButton {
+    @apply inline-block h-10 pb-2 pt-2 px-3 cursor-pointer;
+  }
+
+  .navPageButton_selected .navPageButtonText {
+    @apply underline;
+  }
+
+  /* .navPageButton_selected {
+    @apply bg-red-600;
+  } */
+}
