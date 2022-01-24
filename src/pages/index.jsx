@@ -7,7 +7,14 @@ import {
   getDocs,
   addDoc,
   deleteDoc,
-  doc
+  doc,
+  onSnapshot,
+  query,
+  where,
+  orderBy,
+  serverTimestamp,
+  getDoc,
+  updateDoc
 } from 'firebase/firestore'
 
 const HomePage = () => {
@@ -16,27 +23,53 @@ const HomePage = () => {
   useEffect(() => {
     const db = getFirestore()
 
+    // Get a single document
+    const bookRef = doc(db, 'books', 'HpMhemds5BtPtHqfoqc8')
+
+    // getDoc(bookRef).then((doc) => {
+    //   console.log(doc.data(), doc.id)
+    // })
+
+    onSnapshot(bookRef, (doc) => {
+      console.log(doc.data(), doc.id)
+    })
+
     const booksColRef = collection(db, 'books')
 
-    getDocs(booksColRef)
-      .then((snapshot) => {
-        let books = []
-        snapshot.docs.forEach((doc) => {
-          books.push({ ...doc.data(), id: doc.id })
-        })
-        console.log(books)
-      })
-      .catch((err) => {
-        console.log(err.message)
-      })
+    const filteredColQuery = query(booksColRef, orderBy('createdAt'))
 
+    // Get data once
+
+    // getDocs(booksColRef)
+    //   .then((snapshot) => {
+    //     let books = []
+    //     snapshot.docs.forEach((doc) => {
+    //       books.push({ ...doc.data(), id: doc.id })
+    //     })
+    //     console.log(books)
+    //   })
+    //   .catch((err) => {
+    //     console.log(err.message)
+    //   })
+
+    // Get initial data and on changes
+    onSnapshot(filteredColQuery, (snapshot) => {
+      let books = []
+      snapshot.docs.forEach((doc) => {
+        books.push({ ...doc.data(), id: doc.id })
+      })
+      console.log(books)
+    })
+
+    // Add to a book to collection
     const addBookForm = document.querySelector('.add')
     addBookForm.addEventListener('submit', (e) => {
       e.preventDefault()
 
       addDoc(booksColRef, {
         title: addBookForm.title.value,
-        author: addBookForm.author.value
+        author: addBookForm.author.value,
+        createdAt: serverTimestamp()
       }).then(() => {
         addBookForm.reset()
       })
@@ -52,6 +85,20 @@ const HomePage = () => {
       deleteDoc(docRef).then(() => {
         deleteBookForm.reset()
       })
+    })
+
+    // update a document
+    const updateForm = document.querySelector('.update')
+    updateForm.addEventListener('submit', (e) => {
+      e.preventDefault()
+
+      const docRef = doc(db, 'books', updateForm.id.value)
+
+      updateDoc(docRef, { title: 'This book title was updated, ey' }).then(
+        () => {
+          updateForm.reset()
+        }
+      )
     })
   }, [])
 
@@ -77,6 +124,13 @@ const HomePage = () => {
           <input type="text" name="id" required />
 
           <button>delete a book</button>
+        </form>
+
+        <form className="update mt-5">
+          <label htmlFor="id">Document id:</label>
+          <input type="text" name="id" required />
+
+          <button>update a book</button>
         </form>
       </main>
     </>

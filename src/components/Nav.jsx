@@ -40,7 +40,7 @@ export default function Nav({ selectedPageIndex }) {
             </div>
           </Link>
 
-          <div className="top-2.5 mt-2.5 w-72 h-9 borderF border-gray-200  bg-gray-100 rounded-md mx-auto left-0 right-0 cursor-pointer overflow-hidden">
+          <div className="hidden top-2.5 mt-2.5 w-72 h-9 borderF border-gray-200  bg-gray-100 rounded-md mx-auto left-0 right-0 cursor-pointer overflow-hidden">
             <img
               className="inline-block w-3.5 h-3.5 top-2.5 left-4 ml-4"
               src="./icons/ui/search.svg"
@@ -51,7 +51,7 @@ export default function Nav({ selectedPageIndex }) {
             </div>
           </div>
 
-          <div className="mt-2.5 mr-5F top-2 right-5 w-60F bg-yellow-400F w-72 flex justify-end bg-yellow-400F">
+          <div className="hidden mt-2.5 mr-5F top-2 right-5 w-60F bg-yellow-400F w-72 flex justify-end bg-yellow-400F">
             <div className="inline-block right-32F mr-3 bg-gray-100 w-32 text-center leading-9 h-9 box_radius rounded-md font-semibold text-sm cursor-pointer select-none">
               {/* <img
               className="absolute inline-block w-4 h-4 mt-2.5 ml-3 hidden"
